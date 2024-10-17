@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Penjumlahan</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .calculator {
+            background: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            max-width: 300px;
+            width: 100%;
+        }
+
+        h2 {
+            margin-bottom: 10px;
+        }
+
+        input {
+            width: 100%;
+            padding: 10px;
+            margin: 5px 0;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            text-align: center;
+        }
+
+        button {
+            padding: 10px 15px;
+            margin: 5px;
+            border: none;
+            background-color: #28a745;
+            color: white;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #218838;
+        }
+
+        .reset {
+            background-color: #6c757d;
+        }
+
+        .reset:hover {
+            background-color: #5a6268;
+        }
+
+        .result {
+            margin-top: 10px;
+            font-size: 1.2em;
+        }
+    </style>
+</head>
+<body>
+    <div class="calculator">
+        <h2>Penjumlahan</h2>
+        <label for="number1">Bilangan pertama</label>
+        <input type="number" id="number1" placeholder="Masukkan angka pertama">
+        <label for="number2">Bilangan kedua</label>
+        <input type="number" id="number2" placeholder="Masukkan angka kedua">
+        <div>
+            <button onclick="calculateSum()">Jumlahkan</button>
+            <button class="reset" onclick="resetFields()">Reset</button>
+        </div>
+        <div class="result" id="result">Hasil: </div>
+    </div>
+
+    <script>
+        function calculateSum() {
+            const number1 = parseFloat(document.getElementById('number1').value);
+            const number2 = parseFloat(document.getElementById('number2').value);
+            const sum = number1 + number2;
+
+            if (!isNaN(sum)) {
+                document.getElementById('result').innerText = `Hasil: ${sum}`;
+            } else {
+                document.getElementById('result').innerText = "Masukkan kedua angka dengan benar.";
+            }
+        }
+
+        function resetFields() {
+            document.getElementById('number1').value = '';
+            document.getElementById('number2').value = '';
+            document.getElementById('result').innerText = 'Hasil: ';
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Pendaftaran</title>
+    <style>
+        body {
+            background-color: #f0f0f0;
+            font-family: 'Arial', sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .form-container {
+            background-color: #ffffff;
+            padding: 30px 25px;
+            border-radius: 12px;
+            box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1);
+            max-width: 400px;
+            width: 100%;
+            color: #333;
+        }
+
+        h2 {
+            text-align: center;
+            margin-bottom: 20px;
+            color: #2f644e;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+            color: #555;
+            font-weight: bold;
+        }
+
+        input, textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            font-size: 16px;
+            box-sizing: border-box;
+        }
+
+        button {
+            background-color: #2f644e;
+            color: #ffffff;
+            padding: 12px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s ease;
+            width: 100%;
+        }
+
+        button:hover {
+            background-color: #24543b;
+        }
+
+        input:focus, textarea:focus {
+            border-color: #2f644e;
+            outline: none;
+            box-shadow: 0 0 5px rgba(47, 100, 78, 0.3);
+        }
+
+        .form-container p {
+            font-size: 14px;
+            color: #888;
+            text-align: center;
+            margin-top: 15px;
+        }
+    </style>
+</head>
+<body>
+    <div class="form-container">
+        <h2>Form Pendaftaran</h2>
+        <form id="registrationForm">
+            <label for="name">Nama</label>
+            <input type="text" id="name" placeholder="Masukkan Nama">
+
+            <label for="email">Email</label>
+            <input type="email" id="email" placeholder="Masukkan Email">
+
+            <label for="address">Alamat Lengkap</label>
+            <textarea id="address" placeholder="Masukkan Alamat Lengkap"></textarea>
+
+            <button type="button" onclick="validateForm()">Daftar</button>
+        </form>
+        <p>&copy; 2024 Your Company</p>
+    </div>
+
+    <script>
+        function validateForm() {
+            const name = document.getElementById('name').value.trim();
+            const email = document.getElementById('email').value.trim();
+            const address = document.getElementById('address').value.trim();
+
+            if (name === "" || email === "" || address === "") {
+                alert("Semua field harus diisi.");
+            } else {
+                alert("Pendaftaran berhasil!");
+                // Di sini kamu bisa tambahkan kode untuk mengirim data atau memproses lebih lanjut
+            }
+        }
+    </script>
+</body>
+</html>
